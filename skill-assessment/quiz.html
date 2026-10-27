@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Take Quiz — SkillProbe</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Skill<span>Probe</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="quiz.html" class="btn-nav active">Start Test</a>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<div class="quiz-wrapper">
+
+  <!-- START SCREEN -->
+  <div id="quizStart">
+    <div class="badge" style="margin-bottom:20px">🎯 Skill Assessment Test</div>
+    <h1>Ready to Test<br/>Your Knowledge?</h1>
+    <p>Answer carefully — your scorecard will show topic-wise performance and detailed feedback.</p>
+
+    <div class="quiz-config">
+      <h3>Configure Your Test</h3>
+      <div class="config-item">
+        <label>Select Category</label>
+        <select id="categorySelect">
+          <option value="all">🚀 Mixed (All Topics)</option>
+          <option value="webdev">💻 Web Development</option>
+          <option value="python">🐍 Python Programming</option>
+          <option value="aptitude">🔢 Quantitative Aptitude</option>
+          <option value="dbms">🗄️ Database & SQL</option>
+        </select>
+      </div>
+      <div class="config-item">
+        <label>Number of Questions</label>
+        <select id="questionCount">
+          <option value="5">5 Questions (Quick)</option>
+          <option value="10" selected>10 Questions (Standard)</option>
+          <option value="15">15 Questions (Full Test)</option>
+        </select>
+      </div>
+      <div class="config-item">
+        <label>Time per Question</label>
+        <select id="timePerQ">
+          <option value="30">30 seconds</option>
+          <option value="45" selected>45 seconds</option>
+          <option value="60">60 seconds</option>
+        </select>
+      </div>
+    </div>
+
+    <button class="btn-primary" onclick="startQuiz()" style="font-size:1.1rem;padding:16px 40px">
+      Start Assessment →
+    </button>
+  </div>
+
+  <!-- ACTIVE QUIZ -->
+  <div id="quizActive">
+    <div class="quiz-header">
+      <div class="quiz-progress-label">Question <span id="qNum">1</span> of <span id="qTotal">10</span></div>
+      <div class="quiz-timer" id="timerDisplay">0:45</div>
+    </div>
+    <div class="quiz-progress-bar">
+      <div class="quiz-progress-fill" id="progressFill" style="width:0%"></div>
+    </div>
+    <div class="question-card" id="questionCard">
+      <div class="question-cat" id="questionCat">Web Development</div>
+      <div class="question-text" id="questionText">Question loads here</div>
+      <div class="options" id="optionsContainer"></div>
+    </div>
+    <div class="quiz-nav">
+      <button class="btn-outline" id="skipBtn" onclick="skipQuestion()">Skip →</button>
+      <button class="btn-primary" id="nextBtn" onclick="nextQuestion()" style="display:none">Next Question →</button>
+    </div>
+  </div>
+
+</div>
+
+<script src="questions.js"></script>
+<script src="quiz.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

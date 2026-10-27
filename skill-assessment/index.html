@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SkillProbe — Online Skill Assessment</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Skill<span>Probe</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="quiz.html" class="btn-nav">Start Test</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+    <a href="quiz.html" class="btn-mobile">Start Test</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="badge">🎯 Assess · Learn · Grow</div>
+    <h1>Test Your Skills.<br/><span>Know Your Level.</span></h1>
+    <p>Take our expertly crafted assessments across multiple domains. Get instant results, detailed scorecards, and personalized feedback to level up your career.</p>
+    <div class="hero-btns">
+      <a href="quiz.html" class="btn-primary">Take Free Assessment</a>
+      <a href="services.html" class="btn-outline">Explore Topics</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><strong>12+</strong><span>Skill Domains</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><strong>500+</strong><span>Questions</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><strong>Instant</strong><span>Scorecard</span></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="card-float card-1">
+      <div class="card-icon">💻</div>
+      <div>Web Development</div>
+      <div class="card-score">Score: 87%</div>
+      <div class="progress-bar"><div class="progress-fill" style="width:87%"></div></div>
+    </div>
+    <div class="card-float card-2">
+      <div class="card-icon">🧠</div>
+      <div>Critical Thinking</div>
+      <div class="card-score">Score: 72%</div>
+      <div class="progress-bar"><div class="progress-fill" style="width:72%"></div></div>
+    </div>
+    <div class="card-float card-3">
+      <div class="card-icon">📊</div>
+      <div>Data Analysis</div>
+      <div class="card-score">Score: 91%</div>
+      <div class="progress-bar"><div class="progress-fill" style="width:91%"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+  <div class="container">
+    <div class="section-label">Why SkillProbe?</div>
+    <h2 class="section-title">Everything You Need to<br/>Measure Your Mastery</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="f-icon">⚡</div>
+        <h3>Instant Evaluation</h3>
+        <p>Get your results the moment you submit. No waiting — your score and performance breakdown appear immediately.</p>
+      </div>
+      <div class="feature-card highlight">
+        <div class="f-icon">📋</div>
+        <h3>Detailed Scorecard</h3>
+        <p>Visual scorecard with topic-wise breakdown, correct/incorrect answers, and your percentile ranking.</p>
+      </div>
+      <div class="feature-card">
+        <div class="f-icon">🎯</div>
+        <h3>Adaptive Questions</h3>
+        <p>Questions span beginner to advanced — get a clear map of where your knowledge begins and ends.</p>
+      </div>
+      <div class="feature-card">
+        <div class="f-icon">📱</div>
+        <h3>Fully Responsive</h3>
+        <p>Take assessments on any device — phone, tablet, or desktop. Your progress is always smooth.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories">
+  <div class="container">
+    <div class="section-label">Test Categories</div>
+    <h2 class="section-title">Choose Your Domain</h2>
+    <div class="cat-grid">
+      <a href="quiz.html?cat=webdev" class="cat-card">
+        <span class="cat-emoji">💻</span>
+        <h4>Web Development</h4>
+        <p>HTML, CSS, JS, React</p>
+        <span class="cat-level beginner">Beginner–Advanced</span>
+      </a>
+      <a href="quiz.html?cat=python" class="cat-card">
+        <span class="cat-emoji">🐍</span>
+        <h4>Python Programming</h4>
+        <p>Syntax, OOP, Libraries</p>
+        <span class="cat-level intermediate">Intermediate</span>
+      </a>
+      <a href="quiz.html?cat=aptitude" class="cat-card">
+        <span class="cat-emoji">🔢</span>
+        <h4>Quantitative Aptitude</h4>
+        <p>Math, Reasoning, Logic</p>
+        <span class="cat-level beginner">All Levels</span>
+      </a>
+      <a href="quiz.html?cat=english" class="cat-card">
+        <span class="cat-emoji">📝</span>
+        <h4>English Language</h4>
+        <p>Grammar, Vocab, Comprehension</p>
+        <span class="cat-level beginner">All Levels</span>
+      </a>
+      <a href="quiz.html?cat=dbms" class="cat-card">
+        <span class="cat-emoji">🗄️</span>
+        <h4>Database & SQL</h4>
+        <p>Queries, Normalization, Design</p>
+        <span class="cat-level intermediate">Intermediate</span>
+      </a>
+      <a href="quiz.html?cat=general" class="cat-card cat-card-cta">
+        <span class="cat-emoji">🚀</span>
+        <h4>Start Mixed Quiz</h4>
+        <p>Random questions from all topics</p>
+        <span class="cat-level advanced">Challenge</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-it-works">
+  <div class="container">
+    <div class="section-label">Process</div>
+    <h2 class="section-title">How It Works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Choose a Topic</h3>
+        <p>Pick from our curated list of skill domains that match your goals.</p>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>Take the Quiz</h3>
+        <p>Answer timed multiple-choice questions with a clean, focused interface.</p>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>Get Your Scorecard</h3>
+        <p>Instantly view your score, grade, topic breakdown, and improvement tips.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">Skill<span>Probe</span></a>
+      <p>Empowering learners to discover their true potential through intelligent assessment.</p>
+    </div>
+    <div class="footer-links">
+      <div><h5>Pages</h5>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div><h5>Assessment</h5>
+        <a href="quiz.html">Take Quiz</a>
+        <a href="scorecard.html">View Scorecard</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 SkillProbe. Built for Phase-1 & Phase-2 Project Submission.</div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

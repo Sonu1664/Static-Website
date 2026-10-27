@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact — SkillProbe</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Skill<span>Probe</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <a href="quiz.html" class="btn-nav">Start Test</a>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a><a href="about.html">About</a>
+    <a href="services.html">Services</a><a href="contact.html">Contact</a>
+    <a href="quiz.html" class="btn-mobile">Start Test</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="section-label">Get In Touch</div>
+  <h1>Contact Us</h1>
+  <p>Have a question, suggestion, or feedback about SkillProbe? We'd love to hear from you.</p>
+</div>
+
+<section class="contact-section">
+  <div class="contact-card">
+    <h2>Send a Message</h2>
+    <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+
+    <div class="form-row">
+      <div class="form-group" id="group-fname">
+        <label for="fname">First Name *</label>
+        <input type="text" id="fname" placeholder="Your first name" autocomplete="given-name"/>
+        <div class="err-msg">Please enter your first name.</div>
+      </div>
+      <div class="form-group" id="group-lname">
+        <label for="lname">Last Name *</label>
+        <input type="text" id="lname" placeholder="Your last name" autocomplete="family-name"/>
+        <div class="err-msg">Please enter your last name.</div>
+      </div>
+    </div>
+
+    <div class="form-group" id="group-email">
+      <label for="email">Email Address *</label>
+      <input type="email" id="email" placeholder="you@example.com" autocomplete="email"/>
+      <div class="err-msg">Please enter a valid email address.</div>
+    </div>
+
+    <div class="form-group" id="group-subject">
+      <label for="subject">Subject *</label>
+      <select id="subject">
+        <option value="">— Select a subject —</option>
+        <option value="general">General Inquiry</option>
+        <option value="feedback">Quiz Feedback</option>
+        <option value="bug">Report a Bug</option>
+        <option value="suggestion">Feature Suggestion</option>
+        <option value="other">Other</option>
+      </select>
+      <div class="err-msg">Please select a subject.</div>
+    </div>
+
+    <div class="form-group" id="group-message">
+      <label for="message">Message *</label>
+      <textarea id="message" placeholder="Write your message here..." rows="5"></textarea>
+      <div class="err-msg">Please enter a message (minimum 20 characters).</div>
+    </div>
+
+    <button class="btn-primary" onclick="submitContact()" style="width:100%;justify-content:center;padding:15px">
+      Send Message ✉️
+    </button>
+
+    <div class="form-success" id="formSuccess">
+      ✅ Thank you! Your message has been sent successfully. We'll get back to you soon.
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">Skill<span>Probe</span></a>
+      <p>Empowering learners to discover their true potential through intelligent assessment.</p>
+    </div>
+    <div class="footer-links">
+      <div><h5>Pages</h5>
+        <a href="index.html">Home</a><a href="about.html">About</a>
+        <a href="services.html">Services</a><a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 SkillProbe. Built for Phase-1 & Phase-2 Project Submission.</div>
+</footer>
+
+<script>
+// ============================================
+// FORM VALIDATION — Phase-2: JS Functionality
+// ============================================
+function validateField(id, condition, groupId) {
+  const group = document.getElementById(groupId || 'group-' + id);
+  const input = document.getElementById(id);
+  if (!condition) {
+    group.classList.add('has-error');
+    input.classList.add('error');
+    return false;
+  }
+  group.classList.remove('has-error');
+  input.classList.remove('error');
+  return true;
+}
+
+function submitContact() {
+  const fname = document.getElementById('fname').value.trim();
+  const lname = document.getElementById('lname').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const subject = document.getElementById('subject').value;
+  const message = document.getElementById('message').value.trim();
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  let valid = true;
+  valid = validateField('fname', fname.length >= 2) && valid;
+  valid = validateField('lname', lname.length >= 2) && valid;
+  valid = validateField('email', emailRegex.test(email)) && valid;
+  valid = validateField('subject', subject !== '') && valid;
+  valid = validateField('message', message.length >= 20) && valid;
+
+  if (valid) {
+    // Simulate form submission
+    document.getElementById('formSuccess').style.display = 'block';
+    document.getElementById('fname').value = '';
+    document.getElementById('lname').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('subject').value = '';
+    document.getElementById('message').value = '';
+    setTimeout(() => {
+      document.getElementById('formSuccess').style.display = 'none';
+    }, 5000);
+  }
+}
+
+// Real-time validation
+['fname','lname','email','subject','message'].forEach(id => {
+  const el = document.getElementById(id);
+  el.addEventListener('input', () => {
+    const group = document.getElementById('group-' + id);
+    if (group.classList.contains('has-error')) {
+      group.classList.remove('has-error');
+      el.classList.remove('error');
+    }
+  });
+});
+</script>
+<script src="main.js"></script>
+</body>
+</html>

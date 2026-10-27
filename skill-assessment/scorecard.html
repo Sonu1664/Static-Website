@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Scorecard — SkillProbe</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Skill<span>Probe</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="quiz.html" class="btn-nav">Retake Test</a>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<div class="scorecard-wrapper">
+
+  <div class="score-hero" id="scoreHero">
+    <div style="position:relative;z-index:1">
+      <div class="score-grade" id="scoreGrade">--</div>
+      <div class="score-label">Your Score</div>
+      <div class="score-title" id="scoreTitle">Loading...</div>
+      <div class="score-desc" id="scoreDesc"></div>
+    </div>
+  </div>
+
+  <div class="score-stats">
+    <div class="score-stat-card correct-stat">
+      <div class="big" id="correctCount">--</div>
+      <div class="lbl">✅ Correct</div>
+    </div>
+    <div class="score-stat-card wrong-stat">
+      <div class="big" id="wrongCount">--</div>
+      <div class="lbl">❌ Wrong / Skipped</div>
+    </div>
+    <div class="score-stat-card time-stat">
+      <div class="big" id="timeTaken">--</div>
+      <div class="lbl">⏱ Time Taken</div>
+    </div>
+  </div>
+
+  <!-- TOPIC BREAKDOWN -->
+  <div class="breakdown-section" id="topicBreakdown">
+    <h3>📊 Topic-wise Performance</h3>
+    <div id="topicBars"></div>
+  </div>
+
+  <!-- ANSWER REVIEW -->
+  <div class="breakdown-section" id="answerReview">
+    <h3>📋 Question-by-Question Review</h3>
+    <div id="answerList"></div>
+  </div>
+
+  <!-- ACTIONS -->
+  <div class="scorecard-actions">
+    <a href="quiz.html" class="btn-primary">🔁 Retake Test</a>
+    <a href="index.html" class="btn-outline">🏠 Back to Home</a>
+    <button class="btn-outline" onclick="printScorecard()">🖨 Print Scorecard</button>
+  </div>
+
+</div>
+
+<script src="scorecard.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
